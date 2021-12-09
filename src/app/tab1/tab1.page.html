@@ -1,0 +1,126 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<br>
+<br>
+<br>
+
+<ion-content [fullscreen]="true">
+
+
+
+	<div *ngIf="spinner" class="loader">...</div>
+
+	<div color="medium" class="spin" *ngIf="spinner">
+		<ion-spinner name="bubbles"></ion-spinner>
+	</div>
+
+	<div class="card mb-4 shadow-sm " [@inOutAnimation]>
+		<div class="card-header myBack">
+			<h4 class="my-0 font-weight-normal whiteColor">Dar de alta un Usuario</h4>
+			<form class="form-style-7 myBack myBackgroundColor">
+				<ul class="myBackgroundColor">
+
+					<li class="myBackgroundColor">
+						<label for="name" class="myBackgroundColor">Apellido</label>
+						<input type="text" name="apellido" [(ngModel)]="usuario.apellido">
+						<span>Apellido</span>
+					</li>
+
+					<li>
+						<label for="name"> Nombre </label>
+						<input type="text" name="nombre" [(ngModel)]="usuario.nombre">
+						<span>Nombre</span>
+					</li>
+
+					<li>
+						<label for="Dni"> DNI </label>
+						<input type="text" name="Dni" [(ngModel)]="usuario.dni">
+						<span>Dni</span>
+					</li>
+
+					<li>
+						<label for="sexo"> Sexo </label>
+						
+
+						<div class="wrapper">
+							<div class="icon facebook" (click)="sexo($event, 'M') ">
+							<div class="tooltip">Masculino</div>
+							<span><i class="icon youtube" [ngStyle]="{'background-color' : isMen ? '#e1306c' : '#ffffff'}"> <img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fcomputer.png?alt=media&token=bbcd5e9d-df02-4406-907e-c8dfcd803f7e">
+							</i></span>
+							</div>
+							<div class="icon twitter" (click)="sexo($event,'F')">
+							<div class="tooltip">Femenino</div>
+							<span><i class="icon twitter" [ngStyle]="{'background-color' : isGirl ? '#d800cd' : '#ffffff'}">
+								<img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fwork-from-home.png?alt=media&token=19d1f7d8-941b-40bc-9e35-ba887ae31680">
+							</i></span>
+							</div>
+						</div>
+						<span>Sexo</span>
+					</li>
+
+					<li>
+						<label for="url">email</label>
+						<textarea name="url" maxlength="280" [(ngModel)]="usuario.email"> </textarea>
+						<span>email</span>
+					</li>
+
+					<li>
+						<label for="name"> Contraseña </label>
+						<input type="password" name="Contraseña" [(ngModel)]="usuario.password">
+						<span>Contraseña</span>
+					</li>
+
+					<li>
+						<label for="name"> Contraseña </label>
+						<input type="password" name="Contraseña2" [(ngModel)]="usuario.password2">
+						<span>Contraseña</span>
+					</li>
+
+					<li>
+						<label for="rol">Rol</label>
+						<ion-select class="whiteColor" id="rol" name="rol" [(ngModel)]="usuario.rol" placeholder="Elegir Rol">
+							<ion-select-option color="medium" value="{{rol}}" *ngFor="let rol of roles">{{rol}} </ion-select-option>
+						</ion-select>
+					</li>
+
+					
+					<li>
+						<button type="button" class="btn btn-lg btn-block btn-primary"
+							(click)="subirArchivo()">Subir archivo</button>
+					</li>
+
+					<li>
+						<button type="button" class="btn btn-lg btn-block btn-primary"
+							(click)="guardar()">Guardar</button>
+					</li>
+
+					<div (click)="escanear()">
+						<img src="https://bestof.nyc3.digitaloceanspaces.com/devsnap.me/sam/css-animation-barcode.gif">
+					</div>
+
+					<li>
+						<div *ngIf="usuario.foto" >
+							<div class="centered">
+								<img src="{{usuario.foto}}" alt="Avatar woman">
+							</div>
+						</div>
+					</li>
+
+				</ul>
+
+				
+
+			</form>
+		</div>
+
+		<div>
+
+		</div>
+
+	</div>
+
+	<div id="snackbar">{{Mensajes}}</div>
+
+</ion-content>

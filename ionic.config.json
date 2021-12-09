@@ -1,0 +1,7 @@
+{
+  "name": "lectorDni",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

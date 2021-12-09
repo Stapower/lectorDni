@@ -1,0 +1,13 @@
+<ion-toolbar color="medium">
+  <ion-buttons slot="start">
+      <ion-icon style="zoom:2.0;" name="log-out" (click)=logOut()></ion-icon>
+  </ion-buttons>     
+  
+  <ion-title *ngIf="user != null && user.length > 0">
+    Bienvenido {{user[0]}}
+  </ion-title>
+
+  <ion-title *ngIf="user == null || user.length == 0">
+    Ingrese
+  </ion-title>
+</ion-toolbar>

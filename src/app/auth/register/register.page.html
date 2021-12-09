@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Usuario</ion-label>
+        <ion-input required [(ngModel)]="user.email" type="email" pattern="[a-zA-Z0-9._]+@gmail.com*"placeholder="example@gmail.com"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-input type="password" minlength=6 required [(ngModel)]="user.password"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Repetir Contraseña</ion-label>
+        <ion-input type="password" required [(ngModel)]="user.password2"> </ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)=signIn($event)> Sign In </ion-button>
+</ion-content>

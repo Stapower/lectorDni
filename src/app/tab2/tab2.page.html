@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<br>
+<br>
+<br>
+
+<ion-content [fullscreen]="true">
+
+  <div color="medium" class="spin" *ngIf="usuarios == null || usuarios.length==0">
+		<ion-spinner name="bubbles"></ion-spinner>
+	</div>
+
+  <ion-card *ngFor="let usuario of usuarios; let i = index" color="medium">
+
+    <ion-item color="medium">
+      <ion-label style="margin: center;"class="ionLabel">{{usuario.apellido}}, {{usuario.nombre}}
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content color="medium">
+      <ion-label style="margin: center;"class="ionLabel">con documento: {{usuario.dni}} y mail: {{usuario.email}}
+      </ion-label>
+      <ion-img color="medium" style="width: 45%; height: 45%; margin: auto;" src={{usuario.foto}} ></ion-img>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

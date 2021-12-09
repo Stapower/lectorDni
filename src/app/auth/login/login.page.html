@@ -1,0 +1,85 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content >
+
+  <br>
+  <br>
+  <br>
+
+    <ion-item style="padding-top: 5%;">
+        <ion-label>Usuario</ion-label>
+        <ion-input required [(ngModel)]="user.email" value="admin@gmail.com"></ion-input>
+    </ion-item>
+
+    <ion-item style="padding-top: 5%;">
+        <ion-label>Contraseña</ion-label>
+        <ion-input type="password" required [(ngModel)]="user.password" value="123456"> </ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-button class="buttonColor" expand="full" (click)=logIn($event)> Entrar </ion-button>
+    
+    <br>
+    <!--Necesitas <a href="/register">Crear cuenta</a> ? -->
+	
+    <div color="medium" class="spin" *ngIf="loggingIn">
+      <ion-spinner name="bubbles"></ion-spinner>
+    </div>
+
+
+    <div class="wrapper">
+      <div class="icon facebook" (click)=usuario(mails[0])>
+        <div class="tooltip">Tomas</div>
+        <span><i class="fab fa-facebook-f"> <img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fbussiness-man.png?alt=media&token=087bdc60-c6ac-4298-9d9b-4cd9df40002c">
+         </i></span>
+      </div>
+      <div class="icon twitter" (click)=usuario(mails[1])>
+        <div class="tooltip">Asd</div>
+        <span><i class="fab fa-twitter">
+          <img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fwoman.png?alt=media&token=3c1e1d4c-35ac-44a0-9389-3155995b5691">
+        </i></span>
+      </div>
+      <div class="icon instagram" (click)=usuario(mails[2])>
+        <div class="tooltip">test123</div>
+        <span><i class="fab fa-instagram">
+          <img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fman.png?alt=media&token=d73facd0-2148-4d2e-b040-82bb643209b0">
+        </i></span>
+      </div>
+      
+      <!--div class="icon youtube" (click)=usuario(mails[3])>
+        <div class="tooltip">admin</div>
+        <span ><i class="fab fa-youtube">
+          <img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fsuccess.png?alt=media&token=40977b8c-d6ae-4e8a-828a-85c3622983a2">
+        </i></span>
+      </!--div-->
+
+      <div class="icon twitter" *ngFor = "let user of users" (click)=usuario2(user)>
+        <div class="tooltip">{{user.apellido}}, {{user.nombre}}</div>
+        <span><i class="fab fa-twitter">
+          <img src="https://firebasestorage.googleapis.com/v0/b/pps1-251a8.appspot.com/o/assets%2Fanimales%2Fsuccess.png?alt=media&token=40977b8c-d6ae-4e8a-828a-85c3622983a2">
+        </i></span>
+      </div>
+  
+    </div>
+
+
+    
+    <!--button class="button-34" role="button" (click)="usuario('tomas@gmail.com')">tomas</!--button>
+    <button class="button-34" role="button" (click)="usuario('asd@gmail.com')">asd</button>
+    <button class="button-34" role="button" (click)="usuario('test123@gmail.com')">test</button>
+    <button-- class="button-34" role="button" (click)="usuario('admin@gmail.com')">admin</button-->
+
+    <!--ion-item color="medium" >
+      <ion-label>Elegir Usuario</ion-label>
+      <ion-select color="medium" placeholder="Elegir usuario" (ionChange)=usuario($event)>
+        <ion-select-option color="medium" value="tomas@gmail.com">tomas@gmail.com</ion-select-option>
+        <ion-select-option color="medium" value="asd@gmail.com">asd@gmail.com</ion-select-option>
+        <ion-select-option color="medium" value="test123@gmail.com">test123@gmail.com</ion-select-option>
+        <ion-select-option color="medium" value="admin@gmail.com">admin@gmail.com</ion-select-option>
+      </ion-select>
+    </!--ion-item-->
+
+</ion-content>
